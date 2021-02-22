@@ -24,8 +24,10 @@ graph_AZ = {"A":["D","C","B"],
    "D":["H"],
    "E":["I"],
    "F":["J"],
-"G":[],"G":[],"H":[],
-    "I":[], "J":[], }
+   "G":[],
+   "H":[],
+   "I":[],
+   "J":[], }
 
 from Graph_Algos import graph_search
 

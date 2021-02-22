@@ -1,5 +1,6 @@
 from collections import deque
 
+
 class GraphSearch:
     debug_flag = False
     graph_to_search = {}
@@ -23,7 +24,7 @@ class GraphSearch:
 
     def search_using_bfs(self, person_to_search="jonny"):
         search_queue = deque()
-        search_queue += self.graph_to_search[self.root_node] #you # when you are given a start position
+        search_queue += self.graph_to_search[self.root_node]  # you # when you are given a start position
         already_searched = []
         # key, search_queue = graph.popitem()
         while search_queue:  # if the queue is not empty
@@ -45,7 +46,7 @@ class GraphSearch:
         if self.debug_flag:
             self.print_helper(persons_already_searched, stack_to_put_people_for_searching)
 
-        while stack_to_put_people_for_searching :  # check the queue is already not empty
+        while stack_to_put_people_for_searching:  # check the queue is already not empty
 
             if self.debug_flag:
                 self.print_helper(persons_already_searched, stack_to_put_people_for_searching)
@@ -59,17 +60,7 @@ class GraphSearch:
                 if current_person == person_to_search:
                     return True
                 else:
-                    # See that append adds a single element to the list, which may be anything. +=[] joins the lists.
-                    '''
-                    >>> a=[]
-                    >>> a.append([1,2])
-                    >>> a
-                    [[1, 2]]
-                    >>> a=[]
-                    >>> a+=[1,2]
-                    >>> a
-                    [1, 2]
-                    '''
+
                     stack_to_put_people_for_searching += (self.graph_to_search[current_person])
                     persons_already_searched.append(current_person)
 
