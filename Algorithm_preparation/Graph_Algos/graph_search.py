@@ -1,6 +1,5 @@
 from collections import deque
 
-
 class GraphSearch:
     debug_flag = False
     graph_to_search = {}
@@ -56,7 +55,7 @@ class GraphSearch:
             if current_person not in persons_already_searched:
 
                 if current_person == person_to_search:
-                    return "Yes you Found " + current_person
+                    return True
                 else:
                     # See that append adds a single element to the list, which may be anything. +=[] joins the lists.
                     '''
