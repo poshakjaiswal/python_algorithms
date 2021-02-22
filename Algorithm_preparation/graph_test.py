@@ -13,6 +13,7 @@ graph["jonny"] = []
 from Graph_Algos import graph_algos
 
 
+# Test suite to chek if the graph algorithms are working correctly
 class GraphTestCases(unittest.TestCase):
     def test_person_present_in_graph(self):
         graph_instance = graph_algos.GraphSearch(graph)
