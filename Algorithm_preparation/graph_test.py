@@ -55,7 +55,7 @@ class GraphTestCases(unittest.TestCase):
         graph_instance = graph_search.GraphSearch(graph_AZ)
         graph_instance.debug_flag = True
         graph_instance.root_node = "A"
-        search_result = graph_instance.depth_first_search("H")
+        search_result = graph_instance.depth_first_search("R")
         self.assertEqual(False, search_result)
 
 
