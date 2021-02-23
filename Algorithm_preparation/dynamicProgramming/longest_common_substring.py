@@ -19,10 +19,15 @@ class LongestCommonSubstring:
         print("current row -- > " + str(current_row))
         print("current col -- > " + str(current_col))
         print("--------------")
-        cost_matrix[current_row][current_col] += cost_matrix[current_row-1][current_col-1]
+        diagonal_left = cost_matrix[current_row-1][current_col-1]
 
         if self.first_string[current_row] == self.second_string[current_col]:
-            cost_matrix[current_row][current_col] += 1
+            cost_matrix[current_row][current_col] = diagonal_left + 1
+        else:
+            #cost_matrix[current_row][current_col] = 0
+            pass
+
+
 
 
     def __find_max_element_in_matrix(self,matrix):
@@ -53,4 +58,8 @@ class LongestCommonSubstring:
 
         max_common_substring = self.__find_max_element_in_matrix(cost_matrix)
         print(" Maximum Common Substring length >> " + str(max_common_substring))
+
+        print("------<<<>>>>>>Final for Longest common substring <<<<<<<>>>>>--------")
+        print(cost_matrix)
+        print("--------------")
         return max_common_substring

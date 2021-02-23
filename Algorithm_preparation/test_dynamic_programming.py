@@ -26,11 +26,25 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(3500, value_returned)
 
     def test_longest_common_substring(self):
-        first_word = "hish"
-        second_word = "fish"
+        first_word = "fish"
+        second_word = "hish"
         initialized_lcs = longest_common_substring.LongestCommonSubstring(first_word, second_word)
         value_returned = initialized_lcs.check_length_of_longest_common_substring()
         self.assertEqual(3, value_returned)
+
+    def test_longest_common_substring_large(self):
+        first_word = "GeeksQuiz"
+        second_word = "GeeksforGeeks"
+        initialized_lcs = longest_common_substring.LongestCommonSubstring(first_word, second_word)
+        value_returned = initialized_lcs.check_length_of_longest_common_substring()
+        self.assertEqual(5, value_returned)
+
+    def test_longest_common_substring_large(self):
+        first_word = "GeeksforGeeks"
+        second_word = "GeeksQuiz"
+        initialized_lcs = longest_common_substring.LongestCommonSubstring(first_word, second_word)
+        value_returned = initialized_lcs.check_length_of_longest_common_substring()
+        self.assertEqual(5, value_returned)
 
 
 if __name__ == '__main__':
