@@ -34,8 +34,10 @@ class Knapsack:
         weight_of_current_item = self.knapsack[current_row]['W']
 
         if weight_of_current_item <= (current_col+1):
-            col_balance_wt = current_col - weight_of_current_item + 1
-            value_of_remaining_space = cost_matrix[row_above_it][col_balance_wt]
+            col_balance_wt = current_col - weight_of_current_item
+            value_of_remaining_space = 0
+            if (current_col+1) - weight_of_current_item > 0 :
+                value_of_remaining_space = cost_matrix[row_above_it][col_balance_wt]
             aggregated_value = value_of_remaining_space + cost_of_current_item
 
         cost_to_fill = max(previous_maximum, aggregated_value)
