@@ -10,24 +10,23 @@ graph["peggy"] = []
 graph["thom"] = []
 graph["jonny"] = []
 
+graph_AZ1 = {"A": ["D", "C", "B"],
+             "B": ["E"],
+             "C": ["G", "F"],
+             "D": ["H"],
+             "E": ["I"],
+             "F": ["J"], }
 
-graph_AZ1 = {"A":["D","C","B"],
-   "B":["E"],
-   "C":["G","F"],
-   "D":["H"],
-   "E":["I"],
-   "F":["J"],}
-
-graph_AZ = {"A":["D","C","B"],
-   "B":["E"],
-   "C":["G","F"],
-   "D":["H"],
-   "E":["I"],
-   "F":["J"],
-   "G":[],
-   "H":[],
-   "I":[],
-   "J":[], }
+graph_AZ = {"A": ["D", "C", "B"],
+            "B": ["E"],
+            "C": ["G", "F"],
+            "D": ["H"],
+            "E": ["I"],
+            "F": ["J"],
+            "G": [],
+            "H": [],
+            "I": [],
+            "J": [], }
 
 from Graph_Algos import graph_search
 
@@ -50,10 +49,10 @@ class GraphTestCases(unittest.TestCase):
         search_result = graph_instance.depth_first_search("H")
         self.assertEqual(True, search_result)
 
-# https://likegeeks.com/depth-first-search-in-python/
+    # https://likegeeks.com/depth-first-search-in-python/
     def test_person_absent_in_graph_dfs(self):
         graph_instance = graph_search.GraphSearch(graph_AZ)
-        graph_instance.debug_flag = True
+        # graph_instance.debug_flag = True
         graph_instance.root_node = "A"
         search_result = graph_instance.depth_first_search("R")
         self.assertEqual(False, search_result)
