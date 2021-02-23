@@ -54,7 +54,7 @@ class Knapsack:
         # create a 2D matrix and initialize it with 0
 
         # cost_matrix = [[0] * cols] * rows
-        cost_matrix = [[0 for col in range(cols )] for row in range(rows)]
+        cost_matrix = [[0 for col in range(cols)] for row in range(rows)]
 
         # start filling the matrix
         for i in range(rows):
