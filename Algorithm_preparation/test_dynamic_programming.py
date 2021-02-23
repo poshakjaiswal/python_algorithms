@@ -24,8 +24,8 @@ TOTAL_CAPACITY = 4
 class MyTestCase(unittest.TestCase):
     def test_something(self):
         initialized_knapsack = knapsack.Knapsack(knapsack_items, TOTAL_CAPACITY)
-        initialized_knapsack.find_items_to_pick()
-        self.assertEqual(True, True)
+        value_returned = initialized_knapsack.find_items_to_pick()
+        self.assertEqual(3500, value_returned)
 
 
 if __name__ == '__main__':

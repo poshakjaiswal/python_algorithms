@@ -62,3 +62,4 @@ class Knapsack:
                 cost_matrix[i][j] = self.__check_which_item_to_pick(cost_matrix, i, j)
 
         print(" Maximum Weight that can be stolen >> " + str(cost_matrix[rows - 1][cols - 1]))
+        return cost_matrix[rows - 1][cols - 1]
