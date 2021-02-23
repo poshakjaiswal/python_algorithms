@@ -7,7 +7,7 @@ knapsack_items = {
            "C": 1500
        },
        1: { #stero
-           "W": 1,
+           "W": 4,
            "C": 3000
        },
        2: { #laptop

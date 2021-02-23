@@ -12,13 +12,33 @@ class Knapsack:
     # private method
     def __check_which_item_to_pick(self, cost_matrix, current_row, current_col):
 
-        cost_to_fill = 0
-        value_of_current_item = self.knapsack[current_row].C
-        value_of_remaining_space = cost_matrix[current_row - 1][current_col - self.knapsack[current_row].W]
+        print(cost_matrix)
+        print("--------------")
 
-        previous_maximum = cost_matrix[current_row - 1][current_col]  # the item above it ( upar waala)
+        print("--------------")
 
-        cost_to_fill = max(previous_maximum, value_of_remaining_space)
+        print("current row -- > " + str(current_row))
+        print("current col -- > " + str(current_col))
+        print("--------------")
+
+        aggregated_value = 0
+
+        row_above_it = current_row - 1
+
+        # 1 Take item above it
+        previous_maximum = cost_matrix[row_above_it][current_col]  # the item above it ( upar waala)
+
+        # 2
+
+        cost_of_current_item = self.knapsack[current_row]['C']
+        weight_of_current_item = self.knapsack[current_row]['W']
+
+        if weight_of_current_item <= (current_col+1):
+            col_balance_wt = current_col - weight_of_current_item + 1
+            value_of_remaining_space = cost_matrix[row_above_it][col_balance_wt]
+            aggregated_value = value_of_remaining_space + cost_of_current_item
+
+        cost_to_fill = max(previous_maximum, aggregated_value)
 
         return cost_to_fill
 
@@ -30,15 +50,13 @@ class Knapsack:
         rows, cols = self.available_items_to_pick, self.total_capacity
 
         # create a 2D matrix and initialize it with 0
-        cols += 1
-        rows += 1
-        cost_matrix = [[0] * cols] * rows
-        # cost_matrix = [[0 for i in range(cols)] for j in range(rows)]
-        print(cost_matrix)
+
+        # cost_matrix = [[0] * cols] * rows
+        cost_matrix = [[0 for col in range(cols )] for row in range(rows)]
 
         # start filling the matrix
-        for i in range(cols):
-            for j in range(rows):
+        for i in range(rows):
+            for j in range(cols):
                 cost_matrix[i][j] = self.__check_which_item_to_pick(cost_matrix, i, j)
 
-        print(" Maximum Weight that can be stolen >> " + str(cost_matrix[rows][cols]))
+        print(" Maximum Weight that can be stolen >> " + str(cost_matrix[rows - 1][cols - 1]))
