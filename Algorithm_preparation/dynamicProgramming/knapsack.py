@@ -33,10 +33,10 @@ class Knapsack:
         cost_of_current_item = self.knapsack[current_row]['C']
         weight_of_current_item = self.knapsack[current_row]['W']
 
-        if weight_of_current_item <= (current_col+1):
+        if weight_of_current_item <= (current_col+1):# here current_col+1 is done because the index starts at 0
             col_balance_wt = current_col - weight_of_current_item
             value_of_remaining_space = 0
-            if (current_col+1) - weight_of_current_item > 0 :
+            if (current_col+1) - weight_of_current_item > 0 : # here current_col+1 is done because the index starts at 0
                 value_of_remaining_space = cost_matrix[row_above_it][col_balance_wt]
             aggregated_value = value_of_remaining_space + cost_of_current_item
 
