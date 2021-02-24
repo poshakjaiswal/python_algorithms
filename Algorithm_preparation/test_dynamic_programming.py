@@ -1,6 +1,6 @@
 import unittest
 
-from dynamicProgramming import knapsack,longest_common_substring
+from dynamicProgramming import knapsack,longest_common_substring,longest_common_subsequence
 knapsack_items = {
        0: { #guitar
            "W": 1,
@@ -45,6 +45,20 @@ class MyTestCase(unittest.TestCase):
         initialized_lcs = longest_common_substring.LongestCommonSubstring(first_word, second_word)
         value_returned = initialized_lcs.check_length_of_longest_common_substring()
         self.assertEqual(5, value_returned)
+
+    def test_longest_common_subsequence(self):
+        first_word = "FISH"
+        second_word = "FOSH"
+        initialized_lcs = longest_common_subsequence.LongestCommonSubsequence(first_word, second_word)
+        value_returned = initialized_lcs.check_length_of_longest_common_substring()
+        self.assertEqual(3, value_returned)
+
+    def test_longest_common_subsequence(self):
+        first_word = "FORT"
+        second_word = "FOSH"
+        initialized_lcs = longest_common_subsequence.LongestCommonSubsequence(first_word, second_word)
+        value_returned = initialized_lcs.check_length_of_longest_common_substring()
+        self.assertEqual(2, value_returned)
 
 
 if __name__ == '__main__':
