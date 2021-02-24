@@ -54,11 +54,11 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(3, value_returned)
 
     def test_longest_common_subsequence(self):
-        first_word = "FORT"
-        second_word = "FOSH"
+        first_word =  "CLUES"
+        second_word =  "BLUE"
         initialized_lcs = longest_common_subsequence.LongestCommonSubsequence(first_word, second_word)
         value_returned = initialized_lcs.check_length_of_longest_common_substring()
-        self.assertEqual(2, value_returned)
+        self.assertEqual(3, value_returned)
 
 
 if __name__ == '__main__':
