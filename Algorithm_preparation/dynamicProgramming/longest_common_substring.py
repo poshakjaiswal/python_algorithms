@@ -27,9 +27,6 @@ class LongestCommonSubstring:
             #cost_matrix[current_row][current_col] = 0
             pass
 
-
-
-
     def __find_max_element_in_matrix(self,matrix):
         rows = len(matrix)
         cols = len(matrix[0])
