@@ -1,3 +1,4 @@
+#Author Poshak
 class Knapsack:
     knapsack = {}
     available_items_to_pick = 0
