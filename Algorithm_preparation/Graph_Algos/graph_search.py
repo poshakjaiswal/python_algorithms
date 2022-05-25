@@ -36,7 +36,7 @@ class GraphSearch:
                     search_queue += self.graph_to_search[current_person]
                     already_searched.append(current_person)
 
-        return "No we didnot find who you were looking in your connections"
+        return "No we did notfor  for  find who you were looking in your connections"
 
     def depth_first_search(self, person_to_search="thom"):
 
