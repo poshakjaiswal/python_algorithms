@@ -1,34 +1,40 @@
 from typing import  List
+
+from collections import OrderedDict,Counter
+
 class Solution:
 
-    def plusOne(self, digits: List[int]) -> List[int]:
+    def expressiveWords(self, s: str, words: List[str]) -> int:
 
-        output = []
-        current_sum = 1
-        carry = 0
+        referenceWord = Counter()
+        referenceWord.update(list(s))
 
-        for i in  reversed(digits):
-            current_sum = current_sum + i + carry
-            number = current_sum % 10
-            carry = current_sum // 10
-            output.append(number)
-            current_sum = 0
+        solution = 0
 
-        if carry > 0 :
-            output.append(carry)
-        output.reverse()
-        return output
+
+        for query in words:
+            coun = Counter()
+            coun.update(list(query))
+            count = 0
+
+            if referenceWord.keys() == coun.keys():
+
+                for elem in coun:
+                    if  (referenceWord[elem]  ==   coun[ elem])  or   (referenceWord[elem]   >= 3 ):
+                        count = count + 1
+                if count == len(coun):
+                    solution = solution +1
+
+
+        return solution
 
 
 
 if __name__ == '__main__' :
 
-
-
-    digits = [4,3,2,1]
-
-    digits = [9]
-    print(Solution.plusOne(Solution,digits))
+    s = "heeellooo"
+    words = ["hello", "hi", "helo"]
+    print(Solution.expressiveWords(Solution,s,words))
 
 
 

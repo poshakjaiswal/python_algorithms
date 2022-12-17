@@ -1,4 +1,4 @@
-from collections import deque
+from collections import deque,Counter
 
 
 # for index, char_value in enumerate(s):
@@ -7,23 +7,30 @@ from collections import deque
 #         pass
 class Solution :
 
-    def lengthOfLongestSubstring( s: str) -> int:
-        # temp_set = set()
-        left_pointer = 0
-        right_pointer = 0
-        current_max = 1
-        final_max = 0
 
-        for i in range ( 0,len(s)):
-            temp_set = set()
-            counter = i
-            for z in range ( i , len(s)):
-                temp_set.add(s[z])
-                
+    def lengthOfLongestSubstring(self,s: str) -> int:
 
 
+        # def allElementsWithSingleFrequency(a:Counter)->bool:
 
-        return final_max
+        left = 0
+        right = 0
+
+        unique_chars = set()
+
+        maximum = 0
+
+        while right < len(s):
+
+            if s[right] not in unique_chars:
+                unique_chars.add(s[right])
+                right =  right + 1
+                maximum = max(maximum,right- left)
+            else:
+                unique_chars.remove(s[left])
+                left = left + 1
+        return maximum
+
 
     def lengthOfLongestSubstring1( s: str) -> int:
         temp_set = set()
@@ -59,8 +66,8 @@ class Solution :
 
 
 if __name__ == '__main__':
-    input_string = "pwwkew"
-    print(Solution.lengthOfLongestSubstring(input_string))
+    input_string = "abcabcbb"
+    print(Solution.lengthOfLongestSubstring(Solution,input_string))
 
 
 
